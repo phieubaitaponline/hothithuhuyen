@@ -250,6 +250,7 @@ table.tf{width:100%; border-collapse:separate; border-spacing:0 10px; font-size:
 .fields input:focus{outline:none; border-color:var(--acc1);}
 .res-top{text-align:center;}
 .res-top img{width:150px; display:block; margin:0 auto;}
+.loi-chuc{font-weight:800; color:#0E4D5C; font-size:1.12em; line-height:1.4; margin:0 0 10px; padding:8px 12px; background:#E6F4F5; border-radius:12px; display:inline-block;}
 .big-stars{font-size:4.6rem; letter-spacing:14px; color:#FFB03A; line-height:1.1; margin:4px 0;}
 .star-label{font-size:1.9rem; font-weight:800; color:var(--orange); margin-bottom:6px;}
 .big{font-size:4.6rem; font-weight:800; color:var(--acc1); line-height:1;} .big small{font-size:1.8rem; color:#9C92C4;}
@@ -1109,7 +1110,7 @@ function showResult(){
   document.body.className='part-nhan-biet';
   document.getElementById('countPill').textContent='Hoàn thành'; document.getElementById('progBar').style.width='100%';
   app.innerHTML=`<section class="qcard"><div class="qhead"><div class="q-en">Kết quả bài tập</div></div><div class="qbody">
-    <div class="res-top">
+    <div class="res-top"><div class="loi-chuc">Cô Huyền chúc mừng em đã hoàn thành bài tập!</div>
       <div class="big-stars">${'★★★☆☆☆'.substr(3-stars,3)}</div><div class="star-label">${label}</div>
       <div class="big">${nOk}<small> / ${N} câu đúng</small></div>
       <div class="meta">Đúng ngay lần đầu: ${nFirst} câu · Thời gian làm bài: ${mm} phút ${ss} giây</div></div>
@@ -1714,7 +1715,7 @@ showResult=function(){
   document.body.className='part-nhan-biet';
   document.getElementById('countPill').textContent='Đã nộp bài'; document.getElementById('progBar').style.width='100%';
   app.innerHTML='<section class="qcard"><div class="qhead"><div class="q-en">Kết quả bài làm</div></div><div class="qbody">'+
-    '<div class="res-top"><div class="big-stars">'+'★★★☆☆☆'.substr(3-stars,3)+'</div><div class="star-label">'+label+'</div>'+
+    '<div class="res-top"><div class="loi-chuc">Cô Huyền chúc mừng em đã hoàn thành bài tập!</div><div class="big-stars">'+'★★★☆☆☆'.substr(3-stars,3)+'</div><div class="star-label">'+label+'</div>'+
     '<div class="big">'+fmt(diem)+'<small> / 10 điểm</small></div><div class="meta">Đúng trọn vẹn '+nOk+'/'+N+' câu · Thời gian làm bài: '+mm+' phút '+ss+' giây</div></div>'+
     '<div class="res-block" style="margin-top:18px"><h4>Điểm từng phần</h4><table><tr><th>Phần</th><th>Kết quả</th><th>Điểm</th></tr>'+rows+
     '<tr class="tong"><td>Tổng</td><td>'+nOk+'/'+N+' câu đúng trọn vẹn</td><td class="num">'+fmt(diem)+' / 10</td></tr></table></div>'+
